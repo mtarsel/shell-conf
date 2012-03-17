@@ -1,6 +1,11 @@
 README
 ======
 
+Description
+-----------
+A set of scripts that let you use your own shell, vim, etc configuration on any
+Linux machine without disturbing its configuration.
+
 Configuration
 -------------
 
