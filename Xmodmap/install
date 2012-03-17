@@ -1,0 +1,20 @@
+#!/bin/bash
+XMODMAP_CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR="${HOME}/.shell-conf-backup/Xmodmap"
+
+# Back up original config
+mkdir -p ${BACKUP_DIR}
+if [ -f ${HOME}/.Xmodmap ]; then
+   mv -f ${HOME}/.Xmodmap ${BACKUP_DIR}/Xmodmap
+fi
+
+# Link to proper files
+ln -s ${XMODMAP_CONF_DIR}/Xmodmap ${HOME}/.Xmodmap
+
+# Initiate changes
+if [ ${!DISPLAY[@]} ]; then
+   xmodmap ${XMODMAP_CONF_DIR}/Xmodmap
+   echo "Keymap changed"
+else
+   echo "Keymap _not_ changed"
+fi

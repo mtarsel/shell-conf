@@ -1,0 +1,24 @@
+#!/bin/bash
+
+CONF=vim
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Back up original config
+if [ -d ${HOME}/.${CONF} ]; then
+   mv ${HOME}/.${CONF} ${BACKUP_DIR}/${CONF}
+else
+   mkdir -p ${BACKUP_DIR}/${CONF}
+fi
+if [ -f ${HOME}/.vimrc ]; then
+   mv ${HOME}/.vimrc ${BACKUP_DIR}/${CONF}/__vimrc__
+fi
+if [ -f ${HOME}/.viminfo ]; then
+   mv ${HOME}/.viminfo ${BACKUP_DIR}/${CONF}/__viminfo__
+fi
+
+# Link to proper files
+ln -s ${CONF_DIR} ${HOME}/.${CONF}
+echo "${CONF} directory installed."
+ln -s ${CONF_DIR}/vimrc ${HOME}/.vimrc
+echo "vimrc installed."

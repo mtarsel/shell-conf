@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CONF=gitconfig
+
+BACKUP_DIR="${HOME}/.shell-conf-backup/git"
+
+# Delete symlinks
+rm -f ${HOME}/.${CONF}
+echo "${CONF} removed."
+
+# Restore original config from backup
+if [ -f ${BACKUP_DIR}/${CONF} ]; then
+   mv ${BACKUP_DIR}/${CONF} ${HOME}/.${CONF}
+   echo "Restored old ${CONF}."
+fi
+
+# Delete backup
+rm -rf ${BACKUP_DIR}
+

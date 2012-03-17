@@ -1,0 +1,24 @@
+README
+======
+
+Configuration
+-------------
+
+Fork my repository. You'll need your own copy to use it effectively.
+
+Simply replace the files in the subdirectories with your configuration files.
+Then commit the changes and push it to your personal repo.
+
+The vim directory is special. You can add other files to it, and it will be as
+if you added to the .vim directory on your system.
+
+Use
+---
+Configure using the instructions above.
+
+Clone the repository. Run the install script in the root directory of the
+repository. It will install all of your config files.
+
+When you're done, run the uninstall script in the root directory of the repo.
+The configuration is restored to normal. It's as if you were never there! You
+can now delete the repository from the machine.

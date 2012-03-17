@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+${CONF_DIR}/bash/uninstall
+${CONF_DIR}/Xmodmap/uninstall
+${CONF_DIR}/git/uninstall
+${CONF_DIR}/vim/uninstall
+${CONF_DIR}/zsh/uninstall
+
+# Delete backup
+rm -rf ${BACKUP_DIR}
+

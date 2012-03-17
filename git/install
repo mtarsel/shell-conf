@@ -1,0 +1,16 @@
+#!/bin/bash
+
+CONF=gitconfig
+
+BACKUP_DIR="${HOME}/.shell-conf-backup/git"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Back up original config
+mkdir -p ${BACKUP_DIR}
+if [ -f ${HOME}/.${CONF} ]; then
+   mv -f ${HOME}/.${CONF} ${BACKUP_DIR}/${CONF}
+fi
+
+# Link to proper files
+ln -s ${CONF_DIR}/${CONF} ${HOME}/.${CONF}
+echo "${CONF} installed"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Make backup directory
+mkdir -p ${BACKUP_DIR}
+
+${CONF_DIR}/bash/install
+${CONF_DIR}/Xmodmap/install
+${CONF_DIR}/git/install
+${CONF_DIR}/vim/install
+${CONF_DIR}/zsh/install

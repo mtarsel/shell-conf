@@ -1,0 +1,20 @@
+#!/bin/bash
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR="${HOME}/.shell-conf-backup/Xmodmap"
+
+# Delete symlinks
+rm -f ${HOME}/.Xmodmap
+
+# Restore original config from backup
+if [ -f ${BACKUP_DIR}/Xmodmap ]; then
+   mv ${BACKUP_DIR}/Xmodmap ${HOME}/.Xmodmap
+fi
+
+# Delete backup
+rm -rf ${BACKUP_DIR}
+
+# Restore keymap
+if [ ${!DISPLAY[@]} ]; then
+   setxkbmap
+   echo "Keymap restored"
+fi

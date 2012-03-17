@@ -1,0 +1,23 @@
+#!/bin/bash
+
+CONF=vim
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+
+# Delete symlinks
+rm -f ${HOME}/.${CONF} ${HOME}/.vimrc ${HOME}/.viminfo
+echo ".${CONF}, .vimrc, .viminfo removed."
+
+# Restore original config from backup
+if [ -f ${BACKUP_DIR}/${CONF}/__vimrc__ ]; then
+   mv ${BACKUP_DIR}/${CONF}/__vimrc__ ${HOME}/.vimrc
+   echo "Restored old vimrc."
+fi
+if [ -f ${BACKUP_DIR}/${CONF}/__viminfo__ ]; then
+   mv ${BACKUP_DIR}/${CONF}/__viminfo__ ${HOME}/.viminfo
+   echo "Restored old viminfo."
+fi
+if [ -d ${BACKUP_DIR}/${CONF} ]; then
+   mv ${BACKUP_DIR}/${CONF} ${HOME}/.${CONF}
+   echo "Restored old ${CONF} directory."
+fi
+
