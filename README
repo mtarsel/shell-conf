@@ -1,6 +1,15 @@
 README
 ======
 
+Update
+------
+In this version, you do not have to locate your configuration files, simply run
+the 'create' program in the root directory of this project and it will copy your
+configurations into the proper folders for installation later. If you do not
+have Xmodmap or zsh created, this generates a dummy one with the examples I
+provided in the proper directory. For example, in /zsh/ there is zshrc_example
+but after you run create, it will be renamed into zshrc for installation.
+
 Description
 -----------
 A set of scripts that let you use your own shell, vim, etc configuration on any

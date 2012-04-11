@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CONF=vim
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+DIR=$(locate $USER/.bashrc)
+
+cp $DIR ./
+
+mv .bashrc ./bash/bashrc 
+
+#${CONF_DIR}install
+
+# Link to proper files
+#ln -s ${CONF_DIR} ${HOME}/.${CONF}
+#echo "${CONF} directory installed."
+#ln -s ${CONF_DIR}/vimrc ${HOME}/.vimrc
+#echo "vimrc installed."

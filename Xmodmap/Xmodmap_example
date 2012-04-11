@@ -1,0 +1,5 @@
+! Replace this file with your .Xmodmap file.
+
+! Example: uncomment to map the Escape command to the caps lock key.
+!remove Lock = Caps_Lock
+!keysym Caps_Lock = Escape

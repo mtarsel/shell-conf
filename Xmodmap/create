@@ -1,0 +1,21 @@
+#!/bin/bash
+XMODMAP_CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR="${HOME}/.shell-conf-backup/Xmodmap"
+
+#check if it exsits
+
+DIR=$(locate -e .Xmodmap)
+
+if [ -z "$DIR" ]
+then
+	echo "Xmodmap does not exist!"
+	echo "Renaming Xmodmap_example to Xmodmap to use..."
+	sleep 3
+	mv ./Xmodmap/Xmodmap_example ./Xmodmap/Xmodmap
+#	${CONF_DIR}install
+else
+	cp $DIR ./
+	mv ./Xmodmap/Xmodmap ./Xmodmap/Xmodmap
+#	${CONF_DIR}install
+fi
+

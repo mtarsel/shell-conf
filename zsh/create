@@ -1,0 +1,20 @@
+#!/bin/bash
+XMODMAP_CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR="${HOME}/.shell-conf-backup/Xmodmap"
+
+#check if it exsits
+
+DIR=$(locate -e .zshrc)
+
+if [ -z "$DIR" ]
+then
+	echo "zshrc does not exist!"
+	echo "Renaming zshrc_example to zshrc to use..."
+	sleep 3
+	mv ./zsh/zshrc_example ./zsh/zshrc
+#	${CONF_DIR}install
+else
+	cp $DIR ./
+	mv ./zsh/zshrc ./zsh/zshrc
+#	${CONF_DIR}install
+fi

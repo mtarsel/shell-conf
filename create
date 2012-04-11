@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BACKUP_DIR="${HOME}/.shell-conf-backup"
+CONF_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Make backup directory
+#mkdir -p ${BACKUP_DIR}
+
+${CONF_DIR}/bash/create
+${CONF_DIR}/Xmodmap/create
+${CONF_DIR}/git/create
+${CONF_DIR}/vim/create
+${CONF_DIR}/zsh/create
+
+echo "Your shell_conf has been created!"
